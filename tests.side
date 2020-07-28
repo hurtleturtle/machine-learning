@@ -1,0 +1,144 @@
+{
+  "id": "4b6e98b9-b005-4fb8-a893-a2be4c45148c",
+  "version": "2.0",
+  "name": "sel",
+  "url": "https://pentesttools.co.uk",
+  "tests": [{
+    "id": "908bab9b-84fc-47fe-b6c8-2739fad6fc0b",
+    "name": "start",
+    "commands": [{
+      "id": "4093a955-de88-46e2-a2d5-09314ede82da",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4c74257b-df22-49be-aee9-fede2050b319",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x775",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c446c324-9581-4573-baf8-18c88f370bac",
+      "comment": "",
+      "command": "click",
+      "target": "css=ul:nth-child(2) > .page-item-55 > a",
+      "targets": [
+        ["css=ul:nth-child(2) > .page-item-55 > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Comments & Contact')])[3]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '//pentesttools.co.uk/?page_id=55')])[3]", "xpath:href"],
+        ["xpath=//div/ul/li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd369e00-5d05-43bb-8a5a-ffc14e87c696",
+      "comment": "",
+      "command": "click",
+      "target": "id=nf-field-1",
+      "targets": [
+        ["id=nf-field-1", "id"],
+        ["name=nf-field-1", "name"],
+        ["css=#nf-field-1", "css:finder"],
+        ["xpath=//input[@id='nf-field-1']", "xpath:attributes"],
+        ["xpath=//div[@id='nf-field-1-wrap']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25d71407-a02e-4bd2-9063-9d7eaa4d3e85",
+      "comment": "",
+      "command": "type",
+      "target": "id=nf-field-1",
+      "targets": [
+        ["id=nf-field-1", "id"],
+        ["name=nf-field-1", "name"],
+        ["css=#nf-field-1", "css:finder"],
+        ["xpath=//input[@id='nf-field-1']", "xpath:attributes"],
+        ["xpath=//div[@id='nf-field-1-wrap']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Jono"
+    }, {
+      "id": "39694737-8e0d-43fb-b88e-3ddd80ac2194",
+      "comment": "",
+      "command": "type",
+      "target": "id=nf-field-2",
+      "targets": [
+        ["id=nf-field-2", "id"],
+        ["name=nf-field-2-email", "name"],
+        ["css=#nf-field-2", "css:finder"],
+        ["xpath=//input[@id='nf-field-2']", "xpath:attributes"],
+        ["xpath=//div[@id='nf-field-2-wrap']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//nf-field[2]/div/div[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "Nicholas"
+    }, {
+      "id": "4ea52e88-174b-4f50-b563-aadd14b8841e",
+      "comment": "",
+      "command": "click",
+      "target": "id=nf-field-2",
+      "targets": [
+        ["id=nf-field-2", "id"],
+        ["name=nf-field-2-email", "name"],
+        ["css=#nf-field-2", "css:finder"],
+        ["xpath=//input[@id='nf-field-2']", "xpath:attributes"],
+        ["xpath=//div[@id='nf-field-2-wrap']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//nf-field[2]/div/div[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5dbcc6d-bd25-4998-842e-747ec5dac6eb",
+      "comment": "",
+      "command": "type",
+      "target": "id=nf-field-2",
+      "targets": [
+        ["id=nf-field-2", "id"],
+        ["name=nf-field-2-email", "name"],
+        ["css=#nf-field-2", "css:finder"],
+        ["xpath=//input[@id='nf-field-2']", "xpath:attributes"],
+        ["xpath=//div[@id='nf-field-2-wrap']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//nf-field[2]/div/div[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "jono.nicholas@test.com"
+    }, {
+      "id": "74631e4b-921b-4160-a6aa-2cdbfb90533e",
+      "comment": "",
+      "command": "type",
+      "target": "id=nf-field-3",
+      "targets": [
+        ["id=nf-field-3", "id"],
+        ["name=nf-field-3", "name"],
+        ["css=#nf-field-3", "css:finder"],
+        ["xpath=//textarea[@id='nf-field-3']", "xpath:attributes"],
+        ["xpath=//div[@id='nf-field-3-wrap']/div[2]/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "This is a test of selenium."
+    }, {
+      "id": "18ceadb6-59bb-4b09-a638-fb70f33b740b",
+      "comment": "",
+      "command": "click",
+      "target": "id=nf-field-4",
+      "targets": [
+        ["id=nf-field-4", "id"],
+        ["css=#nf-field-4", "css:finder"],
+        ["xpath=//input[@id='nf-field-4']", "xpath:attributes"],
+        ["xpath=//div[@id='nf-field-4-wrap']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//nf-field[4]/div/div[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4c82c0db-9e12-4f9a-9da1-de4022f05a85",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["908bab9b-84fc-47fe-b6c8-2739fad6fc0b"]
+  }],
+  "urls": ["https://pentesttools.co.uk/"],
+  "plugins": []
+}
