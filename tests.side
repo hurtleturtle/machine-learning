@@ -2,7 +2,7 @@
   "id": "4b6e98b9-b005-4fb8-a893-a2be4c45148c",
   "version": "2.0",
   "name": "sel",
-  "url": "https://pentesttools.co.uk",
+  "url": "https://pentesttools.co.uk/",
   "tests": [{
     "id": "908bab9b-84fc-47fe-b6c8-2739fad6fc0b",
     "name": "start",
@@ -127,6 +127,417 @@
         ["xpath=//input[@id='nf-field-4']", "xpath:attributes"],
         ["xpath=//div[@id='nf-field-4-wrap']/div[2]/input", "xpath:idRelative"],
         ["xpath=//nf-field[4]/div/div[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b5300e76-534e-47c7-af9e-6f88f293268e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Page 3",
+      "targets": [
+        ["linkText=Page 3", "linkText"],
+        ["css=.focus > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Page 3')]", "xpath:link"],
+        ["xpath=//header[@id='site-header']/div/div[2]/nav/ul/li[5]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '//pentesttools.co.uk/?page_id=7')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Page 3')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bbd9748-6d0a-4114-9e67-372946adfa08",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home Page",
+      "targets": [
+        ["linkText=Home Page", "linkText"],
+        ["css=.focus > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Home Page')]", "xpath:link"],
+        ["xpath=//header[@id='site-header']/div/div[2]/nav/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '//pentesttools.co.uk/?page_id=63')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Home Page')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8cde3a9e-8dd9-449f-82c6-8649e56f35ba",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Log In",
+      "targets": [
+        ["linkText=Log In", "linkText"],
+        ["css=.focus > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Log In')]", "xpath:link"],
+        ["xpath=//header[@id='site-header']/div/div[2]/nav/ul/li[4]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '//pentesttools.co.uk/?page_id=60')]", "xpath:href"],
+        ["xpath=//li[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc311f2e-402e-42c9-aa6f-067804281e9a",
+      "comment": "",
+      "command": "click",
+      "target": "name=login_submit",
+      "targets": [
+        ["name=login_submit", "name"],
+        ["css=.btn", "css:finder"],
+        ["xpath=//input[@id='']", "xpath:attributes"],
+        ["xpath=//article[@id='post-60']/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab279d9e-7aca-4327-b1f9-06a7f83514a6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.wp-not-current-submenu > .wp-menu-name",
+      "targets": [
+        ["css=.wp-not-current-submenu > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='menu-users']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//li[3]/a/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c087f7b1-85ec-4b1a-a4d6-45d70131bb2c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.collapse-button-label",
+      "targets": [
+        ["css=.collapse-button-label", "css:finder"],
+        ["xpath=//button[@id='collapse-button']/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Collapse menu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "35d93aaf-8ae3-41ef-a67f-15d15001b7df",
+      "comment": "",
+      "command": "click",
+      "target": "css=.collapse-button-icon",
+      "targets": [
+        ["css=.collapse-button-icon", "css:finder"],
+        ["xpath=//button[@id='collapse-button']/span", "xpath:idRelative"],
+        ["xpath=//span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f842fde-a07f-4b41-bfce-4717218d89ec",
+      "comment": "",
+      "command": "click",
+      "target": "css=.wp-first-item > .wp-menu-name",
+      "targets": [
+        ["css=.wp-first-item > .wp-menu-name", "css:finder"],
+        ["xpath=//li[@id='menu-dashboard']/a/div[3]", "xpath:idRelative"],
+        ["xpath=//div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c9adf36a-a547-4296-8233-2472fec61cb3",
+    "name": "registrations",
+    "commands": [{
+      "id": "2e53bf9e-668b-46bd-9d2d-1caca476af09",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a11261c1-ee01-48d9-b2ef-0f4f52ee2b9e",
+      "comment": "",
+      "command": "click",
+      "target": "css=ul:nth-child(2) > .page-item-61 > a",
+      "targets": [
+        ["css=ul:nth-child(2) > .page-item-61 > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Sign Up')])[3]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '//pentesttools.co.uk/?page_id=61')])[3]", "xpath:href"],
+        ["xpath=//div/ul/li[7]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7152f4e5-5799-47e6-9097-17e5088552f1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.entry-header",
+      "targets": [
+        ["css=.entry-header", "css:finder"],
+        ["xpath=//article[@id='post-61']/header", "xpath:idRelative"],
+        ["xpath=//article/header", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3a8fe31-9176-457a-a520-0295cc669560",
+      "comment": "",
+      "command": "click",
+      "target": "css=.entry-content",
+      "targets": [
+        ["css=.entry-content", "css:finder"],
+        ["xpath=//article[@id='post-61']/div/div", "xpath:idRelative"],
+        ["xpath=//article/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb68511d-09d9-4217-bd37-d92406d01217",
+      "comment": "",
+      "command": "click",
+      "target": "id=reg-username",
+      "targets": [
+        ["id=reg-username", "id"],
+        ["name=reg_username", "name"],
+        ["css=#reg-username", "css:finder"],
+        ["xpath=//input[@id='reg-username']", "xpath:attributes"],
+        ["xpath=//article[@id='post-61']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "971ea6c2-eff7-46bc-b03e-a981766e6c41",
+      "comment": "",
+      "command": "type",
+      "target": "id=reg-username",
+      "targets": [
+        ["id=reg-username", "id"],
+        ["name=reg_username", "name"],
+        ["css=#reg-username", "css:finder"],
+        ["xpath=//input[@id='reg-username']", "xpath:attributes"],
+        ["xpath=//article[@id='post-61']/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "test1"
+    }, {
+      "id": "f7391e06-64d5-4a6e-ba46-d91d92edfea3",
+      "comment": "",
+      "command": "type",
+      "target": "id=reg-password",
+      "targets": [
+        ["id=reg-password", "id"],
+        ["name=reg_password", "name"],
+        ["css=#reg-password", "css:finder"],
+        ["xpath=//input[@id='reg-password']", "xpath:attributes"],
+        ["xpath=//article[@id='post-61']/div/div/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "anothertest"
+    }, {
+      "id": "80ecf72e-39cf-496e-b1de-e95e2abb0cc4",
+      "comment": "",
+      "command": "type",
+      "target": "id=reg-email",
+      "targets": [
+        ["id=reg-email", "id"],
+        ["name=reg_email", "name"],
+        ["css=#reg-email", "css:finder"],
+        ["xpath=//input[@id='reg-email']", "xpath:attributes"],
+        ["xpath=//article[@id='post-61']/div/div/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "testpw@nowhere.com"
+    }, {
+      "id": "48b23735-0519-4a84-9f0b-5151f6ef3380",
+      "comment": "",
+      "command": "type",
+      "target": "id=reg-website",
+      "targets": [
+        ["id=reg-website", "id"],
+        ["name=reg_website", "name"],
+        ["css=#reg-website", "css:finder"],
+        ["xpath=//input[@id='reg-website']", "xpath:attributes"],
+        ["xpath=//article[@id='post-61']/div/div/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "none.com"
+    }, {
+      "id": "2328cc7c-e2cb-479f-a714-88f67a386eb7",
+      "comment": "",
+      "command": "type",
+      "target": "id=id-nickname",
+      "targets": [
+        ["id=id-nickname", "id"],
+        ["name=reg_nickname", "name"],
+        ["css=#id-nickname", "css:finder"],
+        ["xpath=//input[@id='id-nickname']", "xpath:attributes"],
+        ["xpath=//article[@id='post-61']/div/div/form/div/div[5]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": "test11"
+    }, {
+      "id": "462c40b5-5a50-4486-8907-f24ed4a7cc14",
+      "comment": "",
+      "command": "type",
+      "target": "id=reg-firstname",
+      "targets": [
+        ["id=reg-firstname", "id"],
+        ["name=reg_first_name", "name"],
+        ["css=#reg-firstname", "css:finder"],
+        ["xpath=//input[@id='reg-firstname']", "xpath:attributes"],
+        ["xpath=//article[@id='post-61']/div/div/form/div/div[6]/input", "xpath:idRelative"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": "t1"
+    }, {
+      "id": "3eaf59dc-6a4a-40a4-bccb-e9ea383a0d3c",
+      "comment": "",
+      "command": "type",
+      "target": "id=reg-lastname",
+      "targets": [
+        ["id=reg-lastname", "id"],
+        ["name=reg_last_name", "name"],
+        ["css=#reg-lastname", "css:finder"],
+        ["xpath=//input[@id='reg-lastname']", "xpath:attributes"],
+        ["xpath=//article[@id='post-61']/div/div/form/div/div[7]/input", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": "user"
+    }, {
+      "id": "635bc678-65af-493c-ad7f-af7d1fa3a153",
+      "comment": "",
+      "command": "click",
+      "target": "id=submit-button",
+      "targets": [
+        ["id=submit-button", "id"],
+        ["name=reg_submit", "name"],
+        ["css=#submit-button", "css:finder"],
+        ["xpath=//input[@id='submit-button']", "xpath:attributes"],
+        ["xpath=//article[@id='post-61']/div/div/form/div/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "0c76e437-c375-41fb-96d0-8bcba0f6b145",
+    "name": "comments",
+    "commands": [{
+      "id": "4cdc096c-88cb-4332-9b2d-cb6e9b8798b9",
+      "comment": "",
+      "command": "open",
+      "target": "https://pentesttools.co.uk/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5cd0b82b-c43c-4b64-95e4-d6414e7b0c60",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x775",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67f1dd87-e980-4f5c-aa46-2e356207e786",
+      "comment": "",
+      "command": "click",
+      "target": "css=.footer-widgets-outer-wrapper",
+      "targets": [
+        ["css=.footer-widgets-outer-wrapper", "css:finder"],
+        ["xpath=//aside", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5887810a-0324-4c41-a927-98fe700ae872",
+      "comment": "",
+      "command": "click",
+      "target": "css=ul:nth-child(2) > .page-item-55 > a",
+      "targets": [
+        ["css=ul:nth-child(2) > .page-item-55 > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Comments & Contact')])[3]", "xpath:link"],
+        ["xpath=(//a[contains(@href, '//pentesttools.co.uk/?page_id=55')])[3]", "xpath:href"],
+        ["xpath=//div/ul/li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "662ca9c3-7bc8-42b8-ac82-818d92bf04e7",
+      "comment": "",
+      "command": "click",
+      "target": "id=comment",
+      "targets": [
+        ["id=comment", "id"],
+        ["name=comment", "name"],
+        ["css=#comment", "css:finder"],
+        ["xpath=//textarea[@id='comment']", "xpath:attributes"],
+        ["xpath=//form[@id='commentform']/p[2]/textarea", "xpath:idRelative"],
+        ["xpath=//p[2]/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fffc46a-f8f9-44c7-92f7-ff1f6b0df169",
+      "comment": "",
+      "command": "type",
+      "target": "id=comment",
+      "targets": [
+        ["id=comment", "id"],
+        ["name=comment", "name"],
+        ["css=#comment", "css:finder"],
+        ["xpath=//textarea[@id='comment']", "xpath:attributes"],
+        ["xpath=//form[@id='commentform']/p[2]/textarea", "xpath:idRelative"],
+        ["xpath=//p[2]/textarea", "xpath:position"]
+      ],
+      "value": "Some text"
+    }, {
+      "id": "42e3f702-1334-4b60-9337-c8147f36837d",
+      "comment": "",
+      "command": "type",
+      "target": "id=author",
+      "targets": [
+        ["id=author", "id"],
+        ["name=author", "name"],
+        ["css=#author", "css:finder"],
+        ["xpath=//input[@id='author']", "xpath:attributes"],
+        ["xpath=//form[@id='commentform']/p[3]/input", "xpath:idRelative"],
+        ["xpath=//p[3]/input", "xpath:position"]
+      ],
+      "value": "Jono"
+    }, {
+      "id": "9337dcbc-dffd-4e73-b91a-db24ac74fe1d",
+      "comment": "",
+      "command": "type",
+      "target": "id=url",
+      "targets": [
+        ["id=url", "id"],
+        ["name=url", "name"],
+        ["css=#url", "css:finder"],
+        ["xpath=//input[@id='url']", "xpath:attributes"],
+        ["xpath=//form[@id='commentform']/p[5]/input", "xpath:idRelative"],
+        ["xpath=//p[5]/input", "xpath:position"]
+      ],
+      "value": "noweb.com"
+    }, {
+      "id": "441aea7a-a8e0-4f35-b782-a1ca2d2cd7be",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form[@id='commentform']/p[4]/input", "xpath:idRelative"],
+        ["xpath=//p[4]/input", "xpath:position"]
+      ],
+      "value": "jono.n@test.com"
+    }, {
+      "id": "7fea5b31-db7e-4573-9b7f-19966d1650db",
+      "comment": "",
+      "command": "click",
+      "target": "id=submit",
+      "targets": [
+        ["id=submit", "id"],
+        ["name=submit", "name"],
+        ["css=#submit", "css:finder"],
+        ["xpath=//input[@id='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='commentform']/p[7]/input", "xpath:idRelative"],
+        ["xpath=//p[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "886d1757-350a-4683-9e66-b81124b404bb",
+      "comment": "",
+      "command": "click",
+      "target": "id=div-comment-6",
+      "targets": [
+        ["id=div-comment-6", "id"],
+        ["css=#div-comment-6", "css:finder"],
+        ["xpath=//article[@id='div-comment-6']", "xpath:attributes"],
+        ["xpath=//div[@id='comment-6']/article", "xpath:idRelative"],
+        ["xpath=//div[4]/article", "xpath:position"]
       ],
       "value": ""
     }]

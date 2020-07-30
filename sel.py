@@ -13,25 +13,50 @@ from pprint import pprint
 
 
 class Params():
-    def __init__(self, count=10, filename='names.txt'):
-        self.df_names = names(filename)
-        self.user_list = self.users(count)
+    def __init__(self, user_count=10, comment_count=10):
+        self.df_names = self._get_names('names.txt')
+        self.words = self._get_words('/usr/share/dict/words')
+        self.users = self._build_list(self._user, user_count)
+        self.comments = self._build_list(self._comment, comment_count)
 
-    def users(self, count):
-        params = [self._user(self.df_names) for _ in range(count)]
+    def _build_list(self, param, count):
+        params = [param() for _ in range(count)]
         return params
 
-    def _user(self, df):
+    def _get_name(self, name_type='first_name'):
+        return self.df_names[name_type].sample(1).values[0]
+
+    def _get_names(self, filename):
+        df = pd.read_csv(filename, delimiter=' ')
+        return df
+
+    def _get_words(self, filename):
+        with open(filename) as f:
+            return f.read().splitlines()
+
+    def _user(self):
         u = {'reg-password': randstr(12),
              'reg-website': randstr(8) + '.com',
-             'id-nickname': df.Male.sample(1).values[0],
-             'reg-firstname': df.Male.sample(1).values[0],
-             'reg-lastname': df.Female.sample(1).values[0]
+             'id-nickname': self._get_name(),
+             'reg-firstname': self._get_name(),
+             'reg-lastname': self._get_name(name_type='last_name')
              }
         u['reg-email'] = u['reg-firstname'] + '@' + u['reg-website']
-        u['reg-username'] = u['reg-firstname'] + randstr(3)
+        u['reg-username'] = u['reg-firstname'] + randstr(3, string.digits)
 
         return u
+
+    def _comment(self):
+        comment = {'comment': ' '.join(random.choices(self.words,
+                                                      k=random.randint(10,
+                                                                       100))),
+                   'author': self._get_name() + ' ' +
+                             self._get_name('last_name'),
+                   'url': randstr(10) + '.com'
+                   }
+        comment['email'] = comment['author'].replace(' ', '@') + comment['url']
+
+        return comment
 
 
 class DriverWrapper(webdriver.Firefox):
@@ -43,30 +68,35 @@ class DriverWrapper(webdriver.Firefox):
         for user in users:
             self.get(self.url)
             self.find_element(By.CSS_SELECTOR,
-                              "ul > .page-item-61 > a").click()
+                              'ul > .page-item-61 > a').click()
             for key, value in user.items():
                 self.find_element(By.ID, key).send_keys(value)
 
             self.find_element_by_id('submit-button').click()
+
+    def post_comments(self, comments):
+        for comment in comments:
+            self.get(self.url)
+            self.find_element(By.CSS_SELECTOR,
+                              'ul > .page-item-55 > a').click()
+            for key, value in comment.items():
+                self.find_element(By.ID, key).send_keys(value)
+
+            self.find_element_by_id('submit').click()
 
     def check_el(self, element):
         elms = self.find_element(By.CSS_SELECTOR, element)
         pprint(elms)
 
 
-def names(filename):
-    df = pd.read_csv(filename, delimiter=' ', index_col=0)
-    # df.to_pickle(filename)
-    return df
-
-
-def randstr(length):
-    return ''.join(random.choices(string.ascii_letters, k=length))
+def randstr(length, chars=string.ascii_letters):
+    return ''.join(random.choices(chars, k=length))
 
 
 if __name__ == '__main__':
     url = 'https://pentesttools.co.uk/'
-    p = Params()
+    p = Params(0, 10)
 
     with DriverWrapper() as driver:
-        driver.register_users(p.user_list)
+        driver.register_users(p.users)
+        driver.post_comments(p.comments)
