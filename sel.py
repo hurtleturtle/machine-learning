@@ -50,8 +50,8 @@ class Params():
         comment = {'comment': ' '.join(random.choices(self.words,
                                                       k=random.randint(10,
                                                                        100))),
-                   'author': self._get_name() + ' ' +
-                             self._get_name('last_name'),
+                   'author': (self._get_name() + ' ' +
+                              self._get_name('last_name')),
                    'url': randstr(10) + '.com'
                    }
         comment['email'] = comment['author'].replace(' ', '@') + comment['url']
