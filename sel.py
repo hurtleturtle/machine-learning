@@ -105,6 +105,15 @@ class DriverWrapper(webdriver.Firefox):
 
             self.find_element_by_id('submit').click()
 
+    def test_logins(self, users):
+        for user in users:
+            self.get(self.url)
+            self.find_element(By.CSS_SELECTOR, ".home").click()
+            self.find_element(By.LINK_TEXT, "Log In").click()
+            self.find_element(By.ID, "login-name").send_keys(user['username'])
+            self.find_element(By.ID, "login-pass").send_keys(user['passwd'])
+            self.find_element(By.NAME, "login_submit").click()
+
     def check_el(self, element):
         elms = self.find_element(By.CSS_SELECTOR, element)
         pprint(elms)
