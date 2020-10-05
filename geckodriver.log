@@ -168,3 +168,17 @@ console.warn: services.settings: main/cfr-fxa sync interrupted by shutdown
 1596095465253	Marionette	INFO	Listening on port 45977
 1596095465268	Marionette	WARN	TLS certificate errors will be ignored for this session
 1596095485630	Marionette	INFO	Stopped listening on port 45977
+1601908105729	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilegIPFbu"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+JavaScript error: resource://gre/modules/TelemetryUtils.jsm, line 161: TypeError: date is undefined
+1601908108831	Marionette	INFO	Listening on port 38653
+1601908108848	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://pentesttools.co.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://pentesttools.co.uk/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.7, line 20: ReferenceError: jQuery is not defined
+JavaScript error: https://pentesttools.co.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://pentesttools.co.uk/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.7, line 20: ReferenceError: jQuery is not defined
+JavaScript error: https://pentesttools.co.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://pentesttools.co.uk/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.7, line 20: ReferenceError: jQuery is not defined
+JavaScript error: https://pentesttools.co.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1, line 1: ReferenceError: jQuery is not defined
+JavaScript error: https://pentesttools.co.uk/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.7, line 20: ReferenceError: jQuery is not defined
+1601908132628	Marionette	INFO	Stopped listening on port 38653
