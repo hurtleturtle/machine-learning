@@ -20,6 +20,7 @@ class Params():
         self.words = self._get_words('/usr/share/dict/words')
         self.users = self._build_list(self._user, user_count)
         self.comments = self._build_list(self._comment, comment_count)
+        self.save_users()
 
     def _build_list(self, param, count):
         params = [param() for _ in range(count)]
@@ -130,3 +131,4 @@ if __name__ == '__main__':
     with DriverWrapper() as driver:
         driver.register_users(p.users)
         driver.post_comments(p.comments)
+        driver.test_logins(p.load_users())
