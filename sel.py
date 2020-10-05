@@ -88,32 +88,43 @@ class DriverWrapper(webdriver.Firefox):
 
     def register_users(self, users):
         for user in users:
-            self.get(self.url)
-            self.find_element(By.CSS_SELECTOR,
-                              'ul > .page-item-61 > a').click()
-            for key, value in user.items():
-                self.find_element(By.ID, key).send_keys(value)
+            try:
+                self.get(self.url)
+                self.find_element(By.CSS_SELECTOR,
+                                  'ul > .page-item-61 > a').click()
+                for key, value in user.items():
+                    self.find_element(By.ID, key).send_keys(value)
 
-            self.find_element_by_id('submit-button').click()
+                self.find_element_by_id('submit-button').click()
+            except Exception as e:
+                print(e.message)
 
     def post_comments(self, comments):
         for comment in comments:
-            self.get(self.url)
-            self.find_element(By.CSS_SELECTOR,
-                              'ul > .page-item-55 > a').click()
-            for key, value in comment.items():
-                self.find_element(By.ID, key).send_keys(value)
+            try:
+                self.get(self.url)
+                self.find_element(By.CSS_SELECTOR,
+                                  'ul > .page-item-55 > a').click()
+                for key, value in comment.items():
+                    self.find_element(By.ID, key).send_keys(value)
 
-            self.find_element_by_id('submit').click()
+                self.find_element_by_id('submit').click()
+            except Exception as e:
+                print(e.message)
 
     def test_logins(self, users):
         for user in users:
-            self.get(self.url)
-            self.find_element(By.CSS_SELECTOR, ".home").click()
-            self.find_element(By.LINK_TEXT, "Log In").click()
-            self.find_element(By.ID, "login-name").send_keys(user['username'])
-            self.find_element(By.ID, "login-pass").send_keys(user['passwd'])
-            self.find_element(By.NAME, "login_submit").click()
+            try:
+                self.get(self.url)
+                self.find_element(By.CSS_SELECTOR, ".home").click()
+                self.find_element(By.LINK_TEXT, "Log In").click()
+                self.find_element(By.ID,
+                                  "login-name").send_keys(user['username'])
+                self.find_element(By.ID,
+                                  "login-pass").send_keys(user['passwd'])
+                self.find_element(By.NAME, "login_submit").click()
+            except Exception as e:
+                print(e.message)
 
     def check_el(self, element):
         elms = self.find_element(By.CSS_SELECTOR, element)
