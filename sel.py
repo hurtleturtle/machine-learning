@@ -52,7 +52,7 @@ class Params():
         if not users:
             users = [{'username': u['reg-username'],
                       'password': u['reg-password']} for u in self.users]
-        old_users = self.load_users(filename=filenamel)
+        old_users = self.load_users(filename=filename)
         users.extend(old_users)
 
         with open(filename, 'w') as f:
