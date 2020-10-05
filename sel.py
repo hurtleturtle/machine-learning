@@ -10,6 +10,8 @@ import string
 import random
 import pandas as pd
 from pprint import pprint
+import os
+import json
 
 
 class Params():
@@ -45,6 +47,25 @@ class Params():
         u['reg-username'] = u['reg-firstname'] + randstr(3, string.digits)
 
         return u
+
+    def save_users(self, users=None, filename='users.json'):
+        if not users:
+            users = [{'username': u['reg-username'],
+                      'password': u['reg-password']} for u in self.users]
+        old_users = self.load_users(filename=filenamel)
+        users.extend(old_users)
+
+        with open(filename, 'w') as f:
+            json.dump(users, f)
+
+    def load_users(self, filename='users.json'):
+        if os.path.isfile(filename):
+            with open(filename) as f:
+                users = json.load(f)
+        else:
+            users = []
+
+        return users
 
     def _comment(self):
         comment = {'comment': ' '.join(random.choices(self.words,
@@ -95,7 +116,7 @@ def randstr(length, chars=string.ascii_letters):
 
 if __name__ == '__main__':
     url = 'https://pentesttools.co.uk/'
-    p = Params(0, 10)
+    p = Params(user_count=10, comment_count=10)
 
     with DriverWrapper() as driver:
         driver.register_users(p.users)
