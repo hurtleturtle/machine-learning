@@ -97,7 +97,7 @@ class DriverWrapper(webdriver.Firefox):
 
                 self.find_element_by_id('submit-button').click()
             except Exception as e:
-                print(e.message)
+                print(e)
 
     def post_comments(self, comments):
         for comment in comments:
@@ -110,7 +110,7 @@ class DriverWrapper(webdriver.Firefox):
 
                 self.find_element_by_id('submit').click()
             except Exception as e:
-                print(e.message)
+                print(e)
 
     def test_logins(self, users):
         for user in users:
@@ -121,10 +121,10 @@ class DriverWrapper(webdriver.Firefox):
                 self.find_element(By.ID,
                                   "login-name").send_keys(user['username'])
                 self.find_element(By.ID,
-                                  "login-pass").send_keys(user['passwd'])
+                                  "login-pass").send_keys(user['password'])
                 self.find_element(By.NAME, "login_submit").click()
             except Exception as e:
-                print(e.message)
+                print(e)
 
     def check_el(self, element):
         elms = self.find_element(By.CSS_SELECTOR, element)
@@ -137,7 +137,7 @@ def randstr(length, chars=string.ascii_letters):
 
 if __name__ == '__main__':
     url = 'https://pentesttools.co.uk/'
-    p = Params(user_count=10, comment_count=10)
+    p = Params(user_count=0, comment_count=10)
 
     with DriverWrapper() as driver:
         driver.register_users(p.users)
