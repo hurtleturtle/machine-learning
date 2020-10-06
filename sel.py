@@ -152,12 +152,12 @@ def get_args():
     parser = ArgumentParser()
     parser.add_argument('-p', '--project-dir', help='File dependencies are \
                                                     stored in this directory')
-    parser.add_argument('-u', '--user-count', default=5, help='Number of users \
-                        to create')
-    parser.add_argument('-c', '--comment-count', default=5, help='Number of \
-                        comments to create')
-    parser.add_argument('-b', '--browse-count', default=5, help='Number of \
-                        times to browse around the site')
+    parser.add_argument('-u', '--user-count', default=5, type=int,
+                        help='Number of users to create')
+    parser.add_argument('-c', '--comment-count', default=5, type=int,
+                        help='Number of comments to create')
+    parser.add_argument('-b', '--browse-count', default=5, type=int,
+                        help='Number of times to browse around the site')
 
     return parser.parse_args()
 
