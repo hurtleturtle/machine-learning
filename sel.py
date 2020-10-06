@@ -12,11 +12,14 @@ import pandas as pd
 from pprint import pprint
 import os
 import json
+from argparse import ArgumentParser
 
 
 class Params():
-    def __init__(self, user_count=10, comment_count=10):
-        self.df_names = self._get_names('names.txt')
+    def __init__(self, user_count=10, comment_count=10, proj_dir=None):
+        name_file = 'names.txt'
+        name_path = os.path.join(proj_dir, name_file) if proj_dir else name_file
+        self.df_names = self._get_names(name_path)
         self.words = self._get_words('/usr/share/dict/words')
         self.users = self._build_list(self._user, user_count)
         self.comments = self._build_list(self._comment, comment_count)
@@ -126,7 +129,7 @@ class DriverWrapper(webdriver.Firefox):
             except Exception as e:
                 print(e)
 
-    def browse_site(self, urls=[]):
+    def browse_site(self, urls=[], browse_count=5):
         links = ['Blog', 'Home Page', 'Page 3']
         if urls:
             for url in urls:
@@ -145,13 +148,31 @@ class DriverWrapper(webdriver.Firefox):
 def randstr(length, chars=string.ascii_letters):
     return ''.join(random.choices(chars, k=length))
 
+def get_args():
+    parser = ArgumentParser()
+    parser.add_argument('-p', '--project-dir', help='File dependencies are \
+                                                    stored in this directory')
+    parser.add_argument('-u', '--user-count', default=5, help='Number of users \
+                        to create')
+    parser.add_argument('-c', '--comment-count', default=5, help='Number of \
+                        comments to create')
+    parser.add_argument('-b', '--browse-count', default=5, help='Number of \
+                        times to browse around the site')
+
+    return parser.parse_args()
 
 if __name__ == '__main__':
+    args = get_args()
     url = 'https://pentesttools.co.uk/'
-    p = Params(user_count=0, comment_count=10)
+    if args.project_dir:
+        p = Params(user_count=args.user_count,
+                   comment_count=args.comment_count,
+                   proj_dir=args.project_dir)
+    else:
+        p = Params(user_count=args.user_count, comment_count=args.comment_count)
 
     with DriverWrapper() as driver:
         driver.register_users(p.users)
         driver.post_comments(p.comments)
         driver.test_logins(p.load_users())
-        driver.browse_site()
+        driver.browse_site(args.browse_count)
