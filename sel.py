@@ -126,6 +126,17 @@ class DriverWrapper(webdriver.Firefox):
             except Exception as e:
                 print(e)
 
+    def browse_site(self, urls=[]):
+        links = ['Blog', 'Home Page', 'Page 3']
+        if urls:
+            for url in urls:
+                self.get(url)
+        else:
+            self.get(self.url)
+            for link in links:
+                self.find_element(By.LINK_TEXT, link).click()
+
+
     def check_el(self, element):
         elms = self.find_element(By.CSS_SELECTOR, element)
         pprint(elms)
@@ -143,3 +154,4 @@ if __name__ == '__main__':
         driver.register_users(p.users)
         driver.post_comments(p.comments)
         driver.test_logins(p.load_users())
+        driver.browse_site()
