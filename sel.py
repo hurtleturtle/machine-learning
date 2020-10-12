@@ -84,9 +84,11 @@ class Params():
         return comment
 
 
-class DriverWrapper(webdriver.Firefox):
-    def __init__(self, url='https://pentesttools.co.uk/'):
-        super().__init__()
+class DriverWrapper(webdriver.Remote):
+    def __init__(self, url='https://pentesttools.co.uk/', remote=False):
+        remote_address = '10.0.143.50'
+        super().__init__(command_executor=(remote_address if remote else \
+                         'localhost'), options=webdriver.FirefoxOptions())
         self.url = url
 
     def register_users(self, users):
@@ -158,6 +160,8 @@ def get_args():
                         help='Number of comments to create')
     parser.add_argument('-b', '--browse-count', default=5, type=int,
                         help='Number of times to browse around the site')
+    parser.add_argument('-r', '--remote', default=False, action='store_true',
+                        help='Use a remote web driver')
 
     return parser.parse_args()
 
@@ -171,7 +175,7 @@ if __name__ == '__main__':
     else:
         p = Params(user_count=args.user_count, comment_count=args.comment_count)
 
-    with DriverWrapper() as driver:
+    with DriverWrapper(remote=args.remote) as driver:
         driver.register_users(p.users)
         driver.post_comments(p.comments)
         driver.test_logins(p.load_users())
