@@ -142,11 +142,9 @@ class DriverWrapper(webdriver.Remote):
             for link in links:
                 self.find_element(By.LINK_TEXT, link).click()
 
-
     def check_el(self, element):
         elms = self.find_element(By.CSS_SELECTOR, element)
         pprint(elms)
-
 
 def randstr(length, chars=string.ascii_letters):
     return ''.join(random.sample(chars, k=length))
@@ -165,6 +163,9 @@ def get_args():
                         help='Use a remote web driver')
     parser.add_argument('-l', '--login-count', default=5, type=int,
                         help='Number of logins to attempt')
+    parser.add_argument('-v', '--verbosity', default=False, action='store_true',
+                        help='Flag verbose mode')
+
 
     return parser.parse_args()
 
@@ -180,6 +181,8 @@ if __name__ == '__main__':
 
     with DriverWrapper(remote=args.remote) as driver:
         driver.register_users(p.users)
+        if args.verbosity:
+            print(driver.get_cookies())
         driver.post_comments(p.comments)
         driver.test_logins(p.load_users(), login_count=args.login_count)
         driver.browse_site(browse_count=args.browse_count)
