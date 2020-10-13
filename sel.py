@@ -72,7 +72,7 @@ class Params():
         return users
 
     def _comment(self):
-        comment = {'comment': ' '.join(random.choices(self.words,
+        comment = {'comment': ' '.join(random.sample(self.words,
                                                       k=random.randint(10,
                                                                        100))),
                    'author': (self._get_name() + ' ' +
@@ -118,8 +118,8 @@ class DriverWrapper(webdriver.Remote):
             except Exception as e:
                 print(e)
 
-    def test_logins(self, users):
-        for user in users:
+    def test_logins(self, users, login_count=5):
+        for user in random.sample(users, k=max(login_count, len(users)):
             try:
                 self.get(self.url)
                 self.find_element(By.CSS_SELECTOR, ".home").click()
@@ -149,7 +149,7 @@ class DriverWrapper(webdriver.Remote):
 
 
 def randstr(length, chars=string.ascii_letters):
-    return ''.join(random.choices(chars, k=length))
+    return ''.join(random.sample(chars, k=length))
 
 def get_args():
     parser = ArgumentParser()
@@ -163,6 +163,8 @@ def get_args():
                         help='Number of times to browse around the site')
     parser.add_argument('-r', '--remote', default=False, action='store_true',
                         help='Use a remote web driver')
+    parser.add_argument('-l', '--login-count', default=5, type=int,
+                        help='Number of logins to attempt')
 
     return parser.parse_args()
 
@@ -179,5 +181,5 @@ if __name__ == '__main__':
     with DriverWrapper(remote=args.remote) as driver:
         driver.register_users(p.users)
         driver.post_comments(p.comments)
-        driver.test_logins(p.load_users())
+        driver.test_logins(p.load_users(), login_count=args.login_count)
         driver.browse_site(browse_count=args.browse_count)
