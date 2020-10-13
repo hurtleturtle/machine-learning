@@ -86,9 +86,9 @@ class Params():
 
 class DriverWrapper(webdriver.Remote):
     def __init__(self, url='https://pentesttools.co.uk/', remote=False):
-        remote_address = 'http://10.0.143.50:4444'
+        remote_address = 'http://10.0.143.50:4444/wd/hub'
         super().__init__(command_executor=(remote_address if remote else \
-                         'http://localhost:4444'),
+                         'http://localhost:4444/wd/hub'),
                          options=webdriver.FirefoxOptions())
         self.url = url
 
