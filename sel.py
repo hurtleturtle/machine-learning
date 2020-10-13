@@ -180,4 +180,4 @@ if __name__ == '__main__':
         driver.register_users(p.users)
         driver.post_comments(p.comments)
         driver.test_logins(p.load_users())
-        driver.browse_site(args.browse_count)
+        driver.browse_site(browse_count=args.browse_count)
