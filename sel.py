@@ -182,7 +182,7 @@ if __name__ == '__main__':
     with DriverWrapper(remote=args.remote) as driver:
         driver.register_users(p.users)
         if args.verbosity:
-            print(driver.get_cookies())
+            print('Cookies: ' + str(driver.get_cookies()))
         driver.post_comments(p.comments)
         driver.test_logins(p.load_users(), login_count=args.login_count)
         driver.browse_site(browse_count=args.browse_count)
