@@ -119,7 +119,7 @@ class DriverWrapper(webdriver.Remote):
                 print(e)
 
     def test_logins(self, users, login_count=5):
-        for user in random.sample(users, k=max(login_count, len(users)):
+        for user in random.sample(users, k=max(login_count, len(users))):
             try:
                 self.get(self.url)
                 self.find_element(By.CSS_SELECTOR, ".home").click()
