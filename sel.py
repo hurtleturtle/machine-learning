@@ -134,13 +134,16 @@ class DriverWrapper(webdriver.Remote):
 
     def browse_site(self, urls=[], browse_count=5):
         links = ['Blog', 'Home Page', 'Page 3']
-        if urls:
-            for url in urls:
-                self.get(url)
-        else:
-            self.get(self.url)
-            for link in links:
-                self.find_element(By.LINK_TEXT, link).click()
+        try:
+            if urls:
+                for url in urls:
+                    self.get(url)
+            else:
+                self.get(self.url)
+                for link in links:
+                    self.find_element(By.LINK_TEXT, link).click()
+        except Exception as e:
+            print(e)
 
     def check_el(self, element):
         elms = self.find_element(By.CSS_SELECTOR, element)
