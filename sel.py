@@ -42,7 +42,7 @@ class Params():
 
     def _user(self):
         u = {'reg-password': randstr(12),
-             'reg-website': random.choice(self.words) + '.com',
+             'reg-website': random.choice(self.words).replace('\'','') + '.com',
              'id-nickname': self._get_name(),
              'reg-firstname': self._get_name(),
              'reg-lastname': self._get_name(name_type='last_name')
